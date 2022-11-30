@@ -1,0 +1,91 @@
+
+<ion-header  >
+  <div class="banner-img"></div>
+  <ion-toolbar >
+  <br>
+  <ion-title >Sistema de Asistencia DUOC</ion-title>
+  <br>
+  </ion-toolbar>
+</ion-header>   
+
+<ion-content>
+
+  <input #fileinput hidden id="input-file" type="file" accept="image/*;capture=camera" 
+    (change)="verificarArchivoConQR($event.target.files)" />
+
+  <ion-button (click)="cargarImagenDesdeArchivo()" expand="full" shape="block">
+    <ion-icon slot="start" name="camera"></ion-icon>
+    Cargar Imagen con Código QR
+  </ion-button>
+
+  <ion-button *ngIf="!escaneando" (click)="comenzarEscaneoQR()" expand="full" shape="block">
+    <ion-icon slot="start" name="videocam-outline"></ion-icon>
+    Comenzar Escaneo de QR
+  </ion-button>
+
+  <ion-button *ngIf="escaneando" (click)="detenerEscaneoQR()" expand="full" shape="block">
+    <ion-icon slot="start" name="stop-circle-outline"></ion-icon>
+    Detener escaneo de QR
+  </ion-button>
+
+  <ion-button (click)="limpiarDatos()" expand="block" expand="full" shape="block">
+    <ion-icon slot="start" name="trash-outline"></ion-icon>
+    Limpiar datos
+  </ion-button>
+
+  <video #video [hidden]="!escaneando" width="100%"></video>
+  <canvas #canvas hidden></canvas>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Código QR</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <br>
+      <table>
+        <tr>
+          <td class="ancho_columna_titulos">Bloque de Inicio = </td>
+          <td>{{bloqueInicio}}</td>
+        <tr>
+        <tr>
+          <td>Bloque de Termino = </td>
+          <td>{{bloqueTermino}}</td>
+        <tr>
+        <tr>
+          <td>Dia = </td>
+          <td>{{dia}}</td>
+        <tr>
+        <tr>
+          <td>Hora de Fin = </td>
+          <td>{{horaFin}}</td>
+        <tr>
+        <tr>
+          <td>Hora de Inicio = </td>
+          <td>{{horaInicio}}</td>
+        <tr>
+        <tr>
+          <td>Sigla = </td>
+          <td>{{idAsignatura}}</td>
+        <tr>
+        <tr>
+          <td>Nombre de Asignatura = </td>
+          <td>{{nombreAsignatura}}</td>
+        <tr>
+        <tr>
+          <td>Nombre del Profesor = </td>
+          <td>{{nombreProfesor}}</td>
+        <tr>
+        <tr>
+          <td>Seccion = </td>
+          <td>{{seccion}}</td>
+        <tr>
+        <tr>
+          <td>Sede = </td>
+          <td>{{sede}}</td>
+        <tr>
+      </table>
+      <br>
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>

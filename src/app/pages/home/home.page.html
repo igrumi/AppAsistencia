@@ -1,0 +1,15 @@
+
+<ion-header  >
+      <div class="banner-img"></div>
+      <ion-toolbar >
+      <br>
+      <ion-title >Sistema de Asistencia DUOC</ion-title>
+      <br>
+      </ion-toolbar>
+</ion-header>    
+<ion-content>
+      <h1 class="ion-text-center">¡Bienvenido!</h1>
+      <p *ngIf="usuario"> {{ value.nombre }}</p>
+      <ion-button [routerLink]="['/qrreader']">Escaneo Qr</ion-button>
+      <ion-button [routerLink]="['/foro']">Foro</ion-button>
+</ion-content>

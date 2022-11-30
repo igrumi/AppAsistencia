@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="banner-img"></div>
+    <br>
+    <ion-title>Sistema de Asistencia DUOC</ion-title>
+    <br>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-content>
+    <ion-card>
+      <div id="titulo1">
+      <ion-card-subtitle>Ingresa tu respuesta</ion-card-subtitle>
+      </div>
+      <br>
+      <div id="titulo2">
+      <ion-card-subtitle>Paso 2: Responde la pregunta secreta</ion-card-subtitle>
+      </div>
+      <br>
+      <div id="usuario">
+      <p *ngIf="usuario">{{ usuario.nombre }}</p>
+      <br>
+      <p *ngIf="usuario">{{ usuario.preguntaSecreta }}</p>
+      </div>
+      <ion-input type="text" [(ngModel)]="respuesta" placeholder="Escribe aqui tu respuesta"></ion-input>
+      <br>
+      <br>
+      <div id="validar">
+      <a (click)="validarRespuestaSecreta()">Recuperar contraseña</a>
+      </div>
+      <br>
+      <br>
+    </ion-card>
+    <div id="iniciar">
+      <a href="">Iniciar Sesion</a>
+      </div>
+  </ion-content>
+</ion-content>

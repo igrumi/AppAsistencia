@@ -1,0 +1,34 @@
+<ion-header  >
+  <div class="banner-img"></div>
+  <ion-toolbar >
+    <br>
+    <ion-title >Sistema de Asistencia DUOC</ion-title>
+    <br>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <br>
+    <div id="titulo1">
+      <ion-card-subtitle>Recuperar contraseña</ion-card-subtitle>
+      </div>
+      <br>
+      <div id="titulo2">
+      <ion-card-subtitle>Paso 1: Ingresa tu correo</ion-card-subtitle>
+      </div>
+    <br>
+    <br>
+    <ion-input type="text" [(ngModel)]="correo" placeholder="Ingresa tu correo"></ion-input><br>
+    <br>
+    <br>
+    <ion-button shape="block" (click)="ingresarPaginaValidarRespuestaSecreta()">Recuperar contraseña</ion-button>
+    <br>
+  </ion-card>
+  <br>
+  <div id="iniciar">
+  <a href="">Iniciar Sesion</a>
+  </div>
+</ion-content>
+
+
